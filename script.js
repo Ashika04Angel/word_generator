@@ -17,7 +17,7 @@ const words = [
     },
     {
         verse: "God is not a man, that he should lie, neither the son of man, that he should repent: hath he said, and shall he not do it? or hath he spoken, and shall he not make it good? ",
-        chapter: "numbers 23:19"
+        chapter: "Numbers 23:19"
     },
     {
         verse: "Though thy beginning was small, yet thy latter end shall greatly increase. ",
