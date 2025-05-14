@@ -1,1 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f8ff ;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+h1{
+    font-size: 32px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 24px;
+    color: #f15b5b;
+}
+/* main container */
+.main-container{
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #00000033;
+    text-align: center;
+}
+/* word container */
+.word-container{
+    margin: 30px 0;
+}
+.word{
+    font-size: 29px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+}
+.chapter, .verse{
+    font-size: 16px;
+    margin: 5px 50px;
+    line-height: 1.6;
+}
+/* buttons */
+.button-section{
+    margin: 20px 0;
+}
+.button-section button, .clear_fav_btn{
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button-section button:hover{
+    background-color: #45a049;
+}
+/* favorite box */
+.favorites_Container{
+    margin-top: 20px;
+    background-color: #fff5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2 2px 6px rgba(0, 0, 0, 0.1);
+}
+.fav_list{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left;
+}
+.fav_list li{
+    background-color: #ffefef;
+    margin: 5px 0 10px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+.fav_list li:hover{
+    background-color: #ffe0ef;
+
+}
+/* clear */
+.clear_fav_btn{
+    margin-top: 10px;
+    background-color: #f15b5b;
+    transition: 0.3s;
+}
+.clear_fav_btn:hover{
+    background-color:#d9534f ;
+}
 
