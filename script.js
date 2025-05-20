@@ -135,3 +135,31 @@ function renderFavorites(){
         list.appendChild(li)
     })
 }
+list.addEventListener('click', (e) => {
+    console.log(e.target); // Logs the exact clicked element
+    
+    if (e.target.classList.contains('close--icon')) {
+        const liElement = e.target.closest('li'); // Find closest <li>
+        if (liElement) { 
+            const wordtoRemove = liElement.textContent.trim();
+            console.log(`Removing: ${wordtoRemove}`);
+            liElement.remove(); 
+
+            const index = savedFav.indexOf(wordtoRemove); // Fixing indexOf()
+            console.log(`Index: ${index}`);
+            if (index > -1) {
+                savedFav.splice(index, 1); // Remove from array
+                localStorage.setItem('favorites', JSON.stringify(savedFav)); // Update local storage
+                console.log("Updated localStorage!");
+            }
+        }
+    }
+});
+clear.addEventListener('click',()=>{
+    localStorage.removeItem('favorites');
+    savedFav.length = 0;
+    clear1();
+})
+function clear1(){
+    list.innerHTML = '';
+}

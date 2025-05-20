@@ -101,4 +101,19 @@ h3{
 .clear_fav_btn:hover{
     background-color:#d9534f ;
 }
-
+.favorite-remove{
+    border: none;
+    background: none;
+    padding: 5px 9px;
+    border-radius: 100%;
+    color: #f15b5b;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.favorite-remove:hover{
+    background-color: #d9534f;
+}
+.favorite-remove:hover i{
+    color: #fff;
+}
