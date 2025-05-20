@@ -52,9 +52,86 @@ const words = [
         chapter: "Isaiah 60:20"
     },
     {
-        verse: "For I known the thoughts that I think towards you that iI think towards you",
+        verse: "For I known the thoughts that I think towards you that I think towards you",
         chapter: "Jeremiah 29:11"
     },
     
 ]
 console.log(words[1]);
+
+// set
+const word_1 = document.querySelector('.word-container');
+console.log(word_1);
+//2
+const in_1 = document.querySelector(".word");
+// 3
+const vers = document.querySelector(".verse");
+// 4
+const chap = document.querySelector(".chapter")
+// 5
+const gen_but = document.querySelector(".generate_btn");
+// 6
+const favor = document.querySelector(".fav_btn");
+// 7
+const list = document.querySelector(".fav_list");
+// 8
+const clear = document.querySelector(".clear_fav_btn");
+// 9
+const remove = document.querySelector(".fav_remove")
+// 10
+const mic = document.querySelector(".prounce")
+// 11
+const savedFav = JSON.parse(localStorage.getItem('favorites')) || [];
+
+renderFavorites()
+
+gen_but.addEventListener('click',()=>{
+    const randomIndex = Math.floor(Math.random()* words.length)
+    const randomWord = words[randomIndex];
+    // console.log(randomWord);
+    displayWord(randomWord);
+})
+
+// function to display in UI
+
+function displayWord(Element){
+    in_1.textContent = Element.verse;
+    chap.innerHTML = `<strong>Chapter</strong> ${Element.chapter}`; 
+}
+//prounce button
+
+mic.addEventListener('click',() =>{
+    const verses = in_1.textContent;
+    //web API
+    const utterance = new SpeechSynthesisUtterance(verses);
+    utterance.lang ="en-us";
+    speechSynthesis.speak(utterance);
+})
+//favbutton
+
+favor.addEventListener('click',()=>{
+    const verses = in_1.textContent;
+    if(!savedFav.includes
+        (verses)
+    ){
+        savedFav.push(verses)
+        localStorage.setItem('Favorites',
+            JSON.stringify(savedFav)
+        )
+        renderFavorites();
+    }
+})
+//fav button
+
+function renderFavorites(){
+    list.innerHTML = '';
+    savedFav.forEach((words)=>{
+        const li = document.createElement('li');
+        li.innerHTML = `${words} <button 
+        class="favorite-remove"><i
+        class="fa-solid fa-close
+        close--icon"></i></button>`
+
+        list.appendChild(li)
+    })
+}

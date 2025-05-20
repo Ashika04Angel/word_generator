@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- script -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <!-- style -->
     <link rel="stylesheet" href="style.css">
     <!-- icons -->
@@ -15,7 +15,7 @@
 
 <body>
     <div class="main-container">
-        <h1>Word Generator</h1>
+        <h1>Bible Word</h1>
         <div class="word-container">
             <h2 class="word">
                 Click "Generate" to get a word!
@@ -29,6 +29,11 @@
                     Generate
                 </button>
 
+                <button class="prounce">
+                    <i class="fa-solid fa-microphone"></i>
+                    Prounce
+                </button>
+
                 <button class="fav_btn">
                     <i class="fa-solid fa-heart"></i>
                     Save to Favorites
@@ -37,7 +42,7 @@
             <div class="favorites_Container">
                 <h3>Favorites <i class="fa-solid fa-heart"></i></h3>
                 <ul class="fav_list">
-                    <li></li>
+                    
                 </ul>
                 <button class="clear_fav_btn">
                     <i class="fa-solid fa-trash"></i>
